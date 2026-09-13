@@ -70,6 +70,10 @@ make dev-jazzy UID=1001 GID=1001
 - create-develop-container-jazzy-gpu
   - Similar to GPU container but mounts `ros2_workspaces` and names the container `sinfonia-jazzy-dev`, using the ROS2 Jazzy image.
 
+- create-develop-container-jazzy
+  - Runs the non-NVIDIA ROS 2 Jazzy development container named `sinfonia-jazzy-dev` from `robotics:ros2-jazzy-dev`.
+  - Mounts `ros2_workspaces`, enables X11/QT GUI passthrough, includes optional camera devices when present, and uses `/dev/dri` when available for Intel/AMD/direct-rendering graphics.
+
 - delete-develop-container
   - Stops and removes the `sinfonia-dev` container.
 
@@ -93,6 +97,12 @@ Run jazzy GPU container:
 ```bash
 make dev-jazzy
 make create-develop-container-jazzy-gpu
+```
+
+Run jazzy container without a dedicated NVIDIA GPU:
+```bash
+make dev-jazzy
+make create-develop-container-jazzy
 ```
 
 ## Troubleshooting & Notes
