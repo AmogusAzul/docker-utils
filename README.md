@@ -41,6 +41,7 @@ make dev-jazzy UID=1001 GID=1001
 
 - dev-jazzy
   - Builds the ROS 2 Jazzy development image `robotics:ros2-jazzy-dev` from `ros2/jazzy/Dockerfile`.
+  - Installs ROS 2 Jazzy desktop packages plus `ros-dev-tools` for development workflows such as `colcon build`.
   - Note: the Dockerfile uses an Ubuntu base appropriate for Jazzy.
 
 - dev-unitree

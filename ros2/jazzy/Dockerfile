@@ -31,8 +31,8 @@ RUN export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-inf
     curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}})_all.deb" && \
     dpkg -i /tmp/ros2-apt-source.deb
 
-RUN apt update
-RUN apt install -y ros-jazzy-desktop python-is-python3 python3-argcomplete
+RUN apt-get update && \
+    apt-get install -y ros-jazzy-desktop ros-dev-tools python-is-python3 python3-argcomplete
 RUN apt-get install python3-pip build-essential -y
 
 RUN apt-get install -y python-is-python3
